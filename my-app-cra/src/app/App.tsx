@@ -1,18 +1,24 @@
+import React from 'react';
 import { DefaultTheme, ThemeProvider } from 'styled-components';
+import { HelmetProvider } from 'react-helmet-async';
 
-import GlobalStyles from '../styles/global';
-import dTheme from '../styles/themes/default';
-import usePersistedState from '../tools/usePersistedState';
+import GlobalStyles from 'styles/global';
+import dTheme from 'styles/themes/default';
+import usePersistedState from 'tools/usePersistedState';
+import Routes from 'router/routes';
 
 function App() {
-  const [theme] = usePersistedState<DefaultTheme>("theme", dTheme);
+  const [theme] = usePersistedState<DefaultTheme>('theme', dTheme);
 
   return (
-    <ThemeProvider theme={theme}>
-      <div className="App">
-        <GlobalStyles />
-      </div>
-    </ThemeProvider>
+    <HelmetProvider>
+      <ThemeProvider theme={theme}>
+        <div className="App">
+          <GlobalStyles />
+          <Routes />
+        </div>
+      </ThemeProvider>
+    </HelmetProvider>
   );
 }
 
