@@ -14,6 +14,7 @@
     "@types/react-dom": "^17.0.11",
     "axios": "^0.26.0",
     "dotenv-cli": "^5.0.0",
+    "git-branch-is": "4.0.0",
     "polished": "^4.1.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -41,7 +42,16 @@
     "lint:fix": "yarn run eslint --fix src",
     "prettify": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "storybook": "start-storybook -p 6006 -s public --no-manager-cache",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "checkTs": "tsc --noEmit"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "yarn run eslint --fix"
+    ],
+    "*.{md,json}": [
+      "prettier --write"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -62,6 +72,8 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "16.2.1",
+    "@commitlint/config-conventional": "16.2.1",
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-info": "^5.3.21",
@@ -84,6 +96,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-testing-library": "^5.0.5",
     "eslint-webpack-plugin": "^2.5.2",
+    "husky": "7.0.4",
     "prettier": "2.4.1"
   },
   "jest": {

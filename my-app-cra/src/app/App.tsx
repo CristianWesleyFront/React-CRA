@@ -18,7 +18,7 @@ function App() {
     <Provider store={store}>
       <HelmetProvider>
         <ThemeProvider theme={theme}>
-          <div className="App">
+          <div className="App" data-testid="app">
             <GlobalStyles />
             <Routes />
           </div>
