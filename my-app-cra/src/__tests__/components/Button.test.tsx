@@ -9,4 +9,8 @@ describe('<App />', () => {
     render(<App />);
     expect(screen.getByTestId('app')).toBeInTheDocument();
   });
+  it('Should render App', () => {
+    render(<App />);
+    expect(screen.getByTestId('app')).toBeInTheDocument();
+  });
 });
