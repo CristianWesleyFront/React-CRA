@@ -43,7 +43,8 @@
     "prettify": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "storybook": "start-storybook -p 6006 -s public --no-manager-cache",
     "build-storybook": "build-storybook -s public",
-    "checkTs": "tsc --noEmit"
+    "checkTs": "tsc --noEmit",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
