@@ -101,6 +101,7 @@
     "prettier": "2.4.1"
   },
   "jest": {
+    "watchPathIgnorePatterns": ["<rootDir>/src/__tests__/__mocks__"],
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
       "!src/**/*/*.d.ts",
@@ -110,7 +111,8 @@
       "!src/index.tsx",
       "!src/**/*/styles.ts",
       "!src/reportWebVitals.ts",
-      "!src/react-app-env.d.ts"
+      "!src/react-app-env.d.ts",
+      "!src/**/*/*.d.{js,jsx,ts,tsx}"
     ],
     "coverageThreshold": {
       "global": {
