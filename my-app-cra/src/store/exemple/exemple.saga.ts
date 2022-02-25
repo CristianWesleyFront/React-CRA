@@ -15,7 +15,7 @@ export function* getUser(action: PayloadAction<string>) {
   try {
     const response: AxiosResponse<any> = yield call(api, { cep });
 
-    const user: IUser = yield response;
+    const user: IUser = yield response.data;
 
     if (user.codigo) {
       yield put(actions.dataUser(user));
@@ -32,7 +32,7 @@ export function* getUser(action: PayloadAction<string>) {
       yield put(
         actions.errorUser({
           status: 404,
-          mensage: 'Usuário não encontrado',
+          mensage: 'Rota não encontrado',
         }),
       );
     } else {

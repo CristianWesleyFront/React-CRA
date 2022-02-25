@@ -1,12 +1,8 @@
-import { requestGet } from 'utils/http/request';
-import { api } from '.';
-
+import axios from 'axios';
 interface IgetCep {
   cep: string;
 }
 
-export const getCounty = (params: IgetCep) => {
-  const { cep } = params;
-
-  return requestGet(api, `/${cep}`);
+export const getCounty = (params: IgetCep): Promise<any> => {
+  return axios.get(`${process.env.REACT_APP_API}/${params.cep}`);
 };

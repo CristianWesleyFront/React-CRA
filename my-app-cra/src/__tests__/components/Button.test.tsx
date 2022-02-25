@@ -7,6 +7,11 @@ afterEach(cleanup);
 describe('<Button />', () => {
   const mockFunc = jest.fn();
 
+  it('should render an <button> tag', () => {
+    const { container } = render(<Button label="Default Button" />);
+    expect(container.querySelector('button')).not.toBeNull();
+  });
+
   it('Should render Button with default props', () => {
     render(<Button label="Default Button" />);
 

@@ -5,6 +5,15 @@ import Centered from 'components/Centered';
 afterEach(cleanup);
 
 describe('<Centered />', () => {
+  it('should render an <button> tag', () => {
+    const { container } = render(
+      <Centered>
+        <span>Hello Word</span>s
+      </Centered>,
+    );
+    expect(container.children).not.toBeNull();
+  });
+
   it('Should render Centered Element', () => {
     render(
       <Centered>
